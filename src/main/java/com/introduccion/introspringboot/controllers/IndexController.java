@@ -1,5 +1,6 @@
 package com.introduccion.introspringboot.controllers;
 
+import com.introduccion.introspringboot.models.Usuario;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -36,6 +37,17 @@ public class IndexController {
         mv.addObject("titulo","Hola spring con ModelAndView");
         mv.setViewName("index");
         return mv;
+    }
+
+    @RequestMapping("/perfil")
+    public String perfil(Model model){
+        Usuario usuario= new Usuario();
+        usuario.setNombre("Martha");
+        usuario.setApellido("Lopez");
+
+        model.addAttribute("usuario", usuario);
+        model.addAttribute("titulo","Hola :".concat(usuario.getNombre()));
+        return "perfil";
     }
 
 }
