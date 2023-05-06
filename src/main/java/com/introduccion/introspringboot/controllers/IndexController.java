@@ -4,6 +4,7 @@ import com.introduccion.introspringboot.models.Usuario;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -55,12 +56,12 @@ public class IndexController {
 
     @RequestMapping("/listar")
     public String listarl(Model model){
-       List<Usuario> usuarios= new ArrayList<>();
+      /* List<Usuario> usuarios= new ArrayList<>();
        usuarios.add(new Usuario("Jhon","Cifuentes","jcifu@hotmail.com"));
        usuarios.add(new Usuario("Jane","Doe","jdoe@hotmail.com"));
-        usuarios.add(new Usuario("Maria","Benites","mben@hotmail.com"));
+        usuarios.add(new Usuario("Maria","Benites","mben@hotmail.com"));*/
 
-        model.addAttribute("usuarios", usuarios);
+       // model.addAttribute("usuarios", usuarios);
         model.addAttribute("titulo","Listado de usuarios");
         return "listar";
     }
@@ -68,14 +69,23 @@ public class IndexController {
     @RequestMapping("/listar2")
     public String listar2(Model model){
        //  Arrays.asList(); convierte elemennto separados por coma en una lista
-        List<Usuario> usuarios= Arrays.asList(
+     /*   List<Usuario> usuarios= Arrays.asList(
         new Usuario("Jhon","Cifuentes","jcifu@hotmail.com"),
         new Usuario("Jane","Doe","jdoe@hotmail.com"),
-       new Usuario("Maria","Benites","mben@hotmail.com"));
+       new Usuario("Maria","Benites","mben@hotmail.com"));*/
 
-        model.addAttribute("usuarios", usuarios);
+      //  model.addAttribute("usuarios", usuarios);
         model.addAttribute("titulo","Listado de usuarios con Arrays.asList()");
         return "listar";
+    }
+
+    @ModelAttribute("usuarios")   // este atributo es comun a todos los metodos del controlador para pasar datos a varios formularios comunes y asi poblarlos
+    public List<Usuario> poblarUsuarios(){
+        List<Usuario> usuarios= Arrays.asList(
+                new Usuario("Jhon","Cifuentes","jcifu@hotmail.com"),
+                new Usuario("Jane","Doe","jdoe@hotmail.com"),
+                new Usuario("Maria","Benites","mben@hotmail.com"));
+        return usuarios;
     }
 
 }
