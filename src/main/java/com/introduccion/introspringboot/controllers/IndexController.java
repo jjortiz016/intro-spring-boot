@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -55,9 +56,25 @@ public class IndexController {
     @RequestMapping("/listar")
     public String listarl(Model model){
        List<Usuario> usuarios= new ArrayList<>();
+       usuarios.add(new Usuario("Jhon","Cifuentes","jcifu@hotmail.com"));
+       usuarios.add(new Usuario("Jane","Doe","jdoe@hotmail.com"));
+        usuarios.add(new Usuario("Maria","Benites","mben@hotmail.com"));
 
         model.addAttribute("usuarios", usuarios);
         model.addAttribute("titulo","Listado de usuarios");
+        return "listar";
+    }
+
+    @RequestMapping("/listar2")
+    public String listar2(Model model){
+       //  Arrays.asList(); convierte elemennto separados por coma en una lista
+        List<Usuario> usuarios= Arrays.asList(
+        new Usuario("Jhon","Cifuentes","jcifu@hotmail.com"),
+        new Usuario("Jane","Doe","jdoe@hotmail.com"),
+       new Usuario("Maria","Benites","mben@hotmail.com"));
+
+        model.addAttribute("usuarios", usuarios);
+        model.addAttribute("titulo","Listado de usuarios con Arrays.asList()");
         return "listar";
     }
 
