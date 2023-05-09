@@ -14,7 +14,14 @@
     <a th:href="@{/params/string(texto='Que tal Claudia/')}">/params/string?texto=Que tal Claudia!</a>
       <!--@{} para rutas url en thymeleaf propias del proyecto o recursos del proyecto como hojas de stylo, javascript, imagenes -->
   </li>
-
+    <li>
+        <a th:href="@{/params/mix-params(saludo='Comó estás Jhon', numero=7)}">/params/mix-params?saludo=Cómo estás Jhon&numero=7</a>
+        <!--@{} para rutas url en thymeleaf propias del proyecto o recursos del proyecto como hojas de stylo, javascript, imagenes -->
+    </li>
+    <li>
+        <a th:href="@{/params/mix-params-request(saludo='Comó estás Jhon', numero=7)}">/params/mix-params-request?saludo=Cómo estás Jhon&numero=7</a>
+        <!--@{} para rutas url en thymeleaf propias del proyecto o recursos del proyecto como hojas de stylo, javascript, imagenes -->
+    </li>
 
 </ul>
 
