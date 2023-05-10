@@ -1,6 +1,7 @@
 package com.introduccion.introspringboot.controllers;
 
 import com.introduccion.introspringboot.models.Usuario;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +18,15 @@ import java.util.Map;
 @Controller
 public class IndexController {
   // va a tener metodos o handler que va manejar las peticiones
+   /*Anotación @value y textos desde textos.properties*/
+    @Value("${texto.indexcontroller.index.titulo}")
+    private String textoTitulo;
+
+    @Value("${texto.indexcontroller.perfil.titulo}")
+    private String textoPerfil;
+
+    @Value("${texto.indexcontroller.listar.titulo}")
+    private String textoListar;
 
 
     //@RequestMapping(value ="/index", method = RequestMethod.GET)
@@ -24,7 +34,7 @@ public class IndexController {
     /*@GetMapping(value="/index")*/
     @GetMapping({"/index","/"}) // puede ser uno sola ruta
     public String index(Model model){ //tambien se puede utiliza ModelMap
-         model.addAttribute("titulo","Hola Spring framework");
+         model.addAttribute("titulo",textoTitulo);
 
         return "index";
     }
@@ -50,7 +60,7 @@ public class IndexController {
         usuario.setApellido("Lopez");
 
         model.addAttribute("usuario", usuario);
-        model.addAttribute("titulo","Hola :".concat(usuario.getNombre()));
+        model.addAttribute("titulo",textoPerfil.concat(usuario.getNombre()));
         return "perfil";
     }
 
@@ -62,7 +72,7 @@ public class IndexController {
         usuarios.add(new Usuario("Maria","Benites","mben@hotmail.com"));*/
 
        // model.addAttribute("usuarios", usuarios);
-        model.addAttribute("titulo","Listado de usuarios");
+        model.addAttribute("titulo", textoListar);
         return "listar";
     }
 
