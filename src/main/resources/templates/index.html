@@ -9,7 +9,14 @@
 </head>
 <body>
   <h1 th:text="${titulo}"></h1>
+  <li>
+      <a th:href="@{/params/}">/params/</a>
+      <!--@{} para rutas url en thymeleaf propias del proyecto o recursos del proyecto como hojas de stylo, javascript, imagenes -->
+  </li>
 
-
+  <li>
+      <a th:href="@{/variables/}">/variables/</a>
+      <!--@{} para rutas url en thymeleaf propias del proyecto o recursos del proyecto como hojas de stylo, javascript, imagenes -->
+  </li>
 </body>
 </html>
