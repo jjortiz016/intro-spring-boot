@@ -6,9 +6,15 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title th:text="${titulo}"></title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+
+
 </head>
 <body>
-  <h1 th:text="${titulo}"></h1>
+
+  <h1 class="color-rojo" th:text="${titulo}"></h1>
+  <h2 class="color-azul">Decorando con estilos css recursos estáticos</h2>
+  <img th:src="@{/images/spring.png}" alt="/"></img>
   <li>
       <a th:href="@{/params/}">/params/</a>
       <!--@{} para rutas url en thymeleaf propias del proyecto o recursos del proyecto como hojas de stylo, javascript, imagenes -->
