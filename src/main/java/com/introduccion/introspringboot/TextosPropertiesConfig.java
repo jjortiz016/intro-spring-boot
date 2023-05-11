@@ -1,4 +1,4 @@
-package com.introduccion.introspringboot.models;
+package com.introduccion.introspringboot;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;

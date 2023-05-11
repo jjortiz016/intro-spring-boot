@@ -16,6 +16,7 @@ import java.util.List;
 import java.util.Map;
 
 @Controller
+@RequestMapping("/app")
 public class IndexController {
   // va a tener metodos o handler que va manejar las peticiones
    /*Anotación @value y textos desde textos.properties*/
