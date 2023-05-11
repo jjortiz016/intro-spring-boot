@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+  <title>Recibir parametro del request HTTP GET- URL</title>
+</head>
+<body>
+   <H1>Recibir parametro del request HTTP GET- URL</H1>
+<ul>
+  <li>
+    <a th:href="@{/params/string(texto='Hola Jhon')}">/params/string?texto=Hola Jhon</a>
+  </li>
+  <li>
+    <a th:href="@{/params/string(texto='Que tal Claudia/')}">/params/string?texto=Que tal Claudia!</a>
+      <!--@{} para rutas url en thymeleaf propias del proyecto o recursos del proyecto como hojas de stylo, javascript, imagenes -->
+  </li>
+    <li>
+        <a th:href="@{/params/mix-params(saludo='Comó estás Jhon', numero=7)}">/params/mix-params?saludo=Cómo estás Jhon&numero=7</a>
+        <!--@{} para rutas url en thymeleaf propias del proyecto o recursos del proyecto como hojas de stylo, javascript, imagenes -->
+    </li>
+    <li>
+        <a th:href="@{/params/mix-params-request(saludo='Comó estás Jhon', numero=7)}">/params/mix-params-request?saludo=Cómo estás Jhon&numero=7</a>
+        <!--@{} para rutas url en thymeleaf propias del proyecto o recursos del proyecto como hojas de stylo, javascript, imagenes -->
+    </li>
+
+
+
+</ul>
+
+</body>
+</html>

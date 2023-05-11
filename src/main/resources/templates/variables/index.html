@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${titulo}"></title>
+</head>
+<body>
+<H1 th:text="${titulo}"></H1>
+<ul>
+    <li>
+        <a th:href="@{/variables/string/Hola maria}">/variables/string/Hola maria</a>
+        <!--@{} para rutas url en thymeleaf propias del proyecto o recursos del proyecto como hojas de stylo, javascript, imagenes -->
+    </li>
+
+    <li>
+        <a th:href="@{/variables/string/}+'Hola maria'">/variables/string/Hola maria</a>
+        <!--@{} para rutas url en thymeleaf propias del proyecto o recursos del proyecto como hojas de stylo, javascript, imagenes -->
+    </li>
+
+    <li>
+        <a th:href="@{/variables/string/}+'Que tal Jhon'">/variables/string/Que tal Jhon</a>
+        <!--@{} para rutas url en thymeleaf propias del proyecto o recursos del proyecto como hojas de stylo, javascript, imagenes -->
+    </li>
+
+    <li>
+        <a th:href="@{/variables/string/}+'Saludos Carlos'+'/'+7">/variables/string/Saludos Carlos/7</a>
+        <!--@{} para rutas url en thymeleaf propias del proyecto o recursos del proyecto como hojas de stylo, javascript, imagenes -->
+    </li>
+
+    <li>
+        <a th:href="@{/variables/string/}+${'Saludos Carlos'}+'/'+${'7'}">/variables/string/Saludos Carlos/7</a>
+        <!--@{} para rutas url en thymeleaf propias del proyecto o recursos del proyecto como hojas de stylo, javascript, imagenes -->
+    </li>
+
+    <li>
+        <a th:href="@{/variables/string/}+${'Saludos Carlos'}+'/'+${'7'}">/variables/string/Saludos Carlos/7</a>
+        <!--@{} para rutas url en thymeleaf propias del proyecto o recursos del proyecto como hojas de stylo, javascript, imagenes -->
+    </li>
+    <h2>Enviado la variable desde el controlador</h2>
+    <li>
+        <a th:href="@{/variables/string/}+${titulo}+'/'+${'7'}">/variables/string/Saludos Carlos/7</a>
+        <!--@{} para rutas url en thymeleaf propias del proyecto o recursos del proyecto como hojas de stylo, javascript, imagenes -->
+    </li>
+
+
+</ul>
+
+</body>
+</html>
